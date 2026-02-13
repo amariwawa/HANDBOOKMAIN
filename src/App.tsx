@@ -20,12 +20,14 @@ import TeacherChat from "./pages/TeacherChat";
 import TeacherNotes from "./pages/TeacherNotes";
 import TeacherExams from "./pages/TeacherExams";
 import TeacherResearch from "./pages/TeacherResearch";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
@@ -53,8 +55,8 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      </TooltipProvider>
     </ThemeProvider>
-    </TooltipProvider>
   </QueryClientProvider>
 );
 
