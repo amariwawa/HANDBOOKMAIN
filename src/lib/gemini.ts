@@ -1,11 +1,17 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-const genAI = new GoogleGenerativeAI(API_KEY || "");
 
-export const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+// Only initialize if API key is present, otherwise provide a dummy object or throw later
+const genAI = API_KEY ? new GoogleGenerativeAI(API_KEY) : null;
+
+export const model = genAI ? genAI.getGenerativeModel({ model: "gemini-1.5-flash" }) : null;
 
 export async function generateContent(prompt: string) {
+  if (!model) {
+    console.warn("Gemini API Key is missing");
+    return "AI features are currently unavailable. Please check configuration.";
+  }
   try {
     const result = await model.generateContent(prompt);
     const response = await result.response;
@@ -17,6 +23,10 @@ export async function generateContent(prompt: string) {
 }
 
 export async function generateQuestions(subject: string, topic: string, count: number = 5) {
+  if (!model) {
+    console.warn("Gemini API Key is missing");
+    return [];
+  }
   const prompt = `Generate ${count} multiple-choice questions for ${subject} on the topic of "${topic}". 
   Format the response as a JSON array of objects with the following structure:
   {

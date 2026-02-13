@@ -35,7 +35,7 @@ export const AIChatbot = () => {
       const prompt = `You are a helpful AI Tutor for Handbook Nigeria, an educational platform for secondary school students. 
       Answer the following question clearly and concisely, suitable for a student: ${userMessage}`;
       const response = await generateContent(prompt);
-      setMessages((prev) => [...prev, { role: "ai", content: response }]);
+      setMessages((prev) => [...prev, { role: "ai", content: response || "I couldn't generate a response." }]);
     } catch (error) {
       setMessages((prev) => [...prev, { role: "ai", content: "Sorry, I encountered an error. Please try again." }]);
     } finally {
