@@ -7,10 +7,10 @@ const navLinks = [
   { name: "Subjects", href: "/#subjects" },
   { name: "Pricing", href: "/#pricing" },
   { name: "About", href: "/#about" },
-  { name: "Donate", href: "/donate" },
-  { name: "Student Suite", href: "/student-suite" },
-  { name: "Teacher Suite", href: "/teacher-suite" },
-  { name: "Admin", href: "/admin" },
+  { name: "Donate", href: "/#donate" },
+  { name: "Student Suite", href: "/#student-suite" },
+  { name: "Teacher Suite", href: "/#teacher-suite" },
+  { name: "Admin", href: "/#admin" },
 ];
 
 export const Navbar = () => {
@@ -63,6 +63,7 @@ export const Navbar = () => {
 
         {/* CTA Buttons */}
         <div className="hidden md:flex items-center gap-4">
+          <ThemeToggle />
           <button className="text-muted-foreground hover:text-foreground transition-colors duration-300 text-sm font-medium">
             Sign In
           </button>

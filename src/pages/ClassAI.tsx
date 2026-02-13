@@ -1,11 +1,11 @@
+import React from "react";
 import { DashboardLayout } from "@/components/layout/DashboardLayout";
-import StudentDashboard from "@/components/student/StudentDashboard";
+import { AIChatbot } from "@/components/AIChatbot"; // Reusing the chatbot component or creating a specific one
 import { 
   LayoutDashboard, 
   BookOpen, 
-  CheckSquare, 
+  FileText, 
   Gamepad2, 
-  FileText,
   MessageSquare,
   Sparkles
 } from "lucide-react";
@@ -25,18 +25,22 @@ const mockFriends = [
   { name: "Jhon Tosan", status: "Friend", avatar: "https://i.pravatar.cc/150?u=jhon" },
 ];
 
-const StudentSuite = () => {
+const ClassAI = () => {
   return (
-    <DashboardLayout 
-      navItems={studentNavItems} 
-      userType="Student"
-      friends={mockFriends}
-    >
-      <div className="font-[Times_New_Roman]">
-        <StudentDashboard />
+    <DashboardLayout navItems={studentNavItems} userType="Student" friends={mockFriends}>
+      <div className="h-full flex flex-col font-[Times_New_Roman]">
+        <h2 className="text-3xl font-bold tracking-tight mb-6">Class AI Tutor</h2>
+        <div className="flex-1 bg-card rounded-xl border p-6 flex flex-col items-center justify-center text-center">
+          <Sparkles className="w-16 h-16 text-primary mb-4" />
+          <h3 className="text-xl font-semibold mb-2">Your Personal AI Assistant</h3>
+          <p className="text-muted-foreground max-w-md mb-8">
+            Ask questions about your homework, generate study notes, or get explanations for complex topics.
+          </p>
+          <AIChatbot /> 
+        </div>
       </div>
     </DashboardLayout>
   );
 };
 
-export default StudentSuite;
+export default ClassAI;

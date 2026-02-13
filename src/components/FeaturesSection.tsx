@@ -49,7 +49,7 @@ export const FeaturesSection = () => {
             Why Handbook?
           </span>
           <h2 className="section-title mb-6">
-            Learn <span className="italic-accent text-primary">Smarter,</span> Not Harder
+            Learn Smarter,<span className="italic-accent text-primary">Not Harder</span>
           </h2>
           <p className="section-subtitle mx-auto font-body">
             Experience the future of education with features designed specifically 

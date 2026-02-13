@@ -110,7 +110,7 @@ const StudentPastQuestions = () => {
       navItems={studentNavItems} 
       userType="Student"
     >
-      <div className="grid gap-8 lg:grid-cols-3 h-[calc(100vh-160px)]">
+      <div className="grid gap-8 lg:grid-cols-3 h-[calc(100vh-160px)] font-[Times_New_Roman]">
         {/* Question Area */}
         <div className="lg:col-span-2 space-y-6 overflow-y-auto pr-4">
           <div className="flex items-center justify-between mb-2">

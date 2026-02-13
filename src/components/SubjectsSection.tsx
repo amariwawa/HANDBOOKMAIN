@@ -32,7 +32,7 @@ const subjectData: Record<Category, { name: string; image: string; description: 
   arts: [
     { name: "Literature in English", image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop", description: "Explore great literary works" },
     { name: "Government", image: "https://images.unsplash.com/photo-1555848962-6e79363ec58f?w=400&h=300&fit=crop", description: "Political systems & governance" },
-    { name: "History", image: "https://images.unsplash.com/photo-1461360370896-922624d12a74?w=400&h=300&fit=crop", description: "Understanding our past" },
+    { name: "History", image: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Thomas_Jefferson_by_Rembrandt_Peale%2C_1800.jpg", description: "Understanding our past" },
     { name: "Geography", image: "https://images.unsplash.com/photo-1476973422084-e0fa66ff9456?w=400&h=300&fit=crop", description: "Study of Earth and places" },
     { name: "Civic Education", image: "https://images.unsplash.com/photo-1575320181282-9afab399332c?w=400&h=300&fit=crop", description: "Rights and responsibilities" },
     { name: "French", image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400&h=300&fit=crop", description: "French language mastery" },
@@ -50,7 +50,7 @@ const subjectData: Record<Category, { name: string; image: string; description: 
     { name: "AI Ethics", image: "https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?w=400&h=300&fit=crop", description: "Social impacts of AI" },
     { name: "Data Science", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop", description: "Learning from information" },
     { name: "Machine Learning", image: "https://images.unsplash.com/photo-1527474305487-b87b222841cc?w=400&h=300&fit=crop", description: "How algorithms learn" },
-    { name: "Creative AI", image: "https://images.unsplash.com/photo-1547891299-219574ef0605?w=400&h=300&fit=crop", description: "AI in art and music" },
+    { name: "Creative AI", image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=300&fit=crop", description: "AI in art and music" },
     { name: "Future of Work", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop", description: "Adapting to tech shifts" },
   ],
 };

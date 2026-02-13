@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 const plans = [
   {
     name: "Basic",
-    price: "₦2,000",
+    price: "₦4,000",
     period: "/month",
     description: "Perfect for getting started with AI-powered learning",
     image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop",
@@ -20,7 +20,7 @@ const plans = [
   },
   {
     name: "Premium",
-    price: "₦4,000",
+    price: "₦12,000",
     period: "/month",
     description: "Unlimited learning with personalized AI tutoring",
     image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=400&fit=crop",
@@ -38,7 +38,7 @@ const plans = [
   },
   {
     name: "Enterprise",
-    price: "₦20,000",
+    price: "₦50,000",
     period: "/month",
     description: "Complete solution for schools and institutions",
     image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=400&fit=crop",
@@ -168,7 +168,7 @@ export const PricingSection = () => {
           transition={{ delay: 0.5 }}
           className="text-center text-muted-foreground text-sm mt-12 font-body"
         >
-          All plans include a 7-day free trial. No credit card required to start.
+          All plans include a 3-day free trial. No credit card required to start.
         </motion.p>
       </div>
     </section>
