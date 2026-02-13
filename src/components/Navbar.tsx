@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Subjects", href: "/#subjects" },
   { name: "Pricing", href: "/#pricing" },
   { name: "About", href: "/#about" },
-  { name: "Donate", href: "/#donate" },
-  { name: "Student Suite", href: "/#student-suite" },
-  { name: "Teacher Suite", href: "/#teacher-suite" },
-  { name: "Admin", href: "/#admin" },
+  { name: "Donate", href: "/donate" },
+  { name: "Student Suite", href: "/student-suite" },
+  { name: "Teacher Suite", href: "/teacher-suite" },
+  { name: "Admin", href: "/admin" },
 ];
 
 export const Navbar = () => {

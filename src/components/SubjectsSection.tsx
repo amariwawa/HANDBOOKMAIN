@@ -73,8 +73,8 @@ export const SubjectsSection = () => {
           transition={{ duration: 0.5 }}
         >
           <div className="w-[1px] h-32 bg-gradient-to-b from-transparent via-primary/50 to-transparent" />
-          <a 
-            href="/all-categories"
+          <Link 
+            to="/all-categories"
             className="group flex flex-col items-center gap-4"
           >
             <span className="text-[10px] uppercase tracking-[0.2em] text-primary/50 vertical-text font-medium group-hover:text-primary transition-colors">
@@ -85,7 +85,7 @@ export const SubjectsSection = () => {
               transition={{ duration: 2, repeat: Infinity }}
               className="w-1.5 h-1.5 rounded-full bg-primary"
             />
-          </a>
+          </Link>
         </motion.div>
       )}
 

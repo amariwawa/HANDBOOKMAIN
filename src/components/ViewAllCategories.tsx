@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export const ViewAllCategories = () => {
   return (
@@ -14,8 +15,8 @@ export const ViewAllCategories = () => {
           <h3 className="text-2xl font-display font-bold mb-2">Explore All Categories</h3>
           <p className="text-muted-foreground font-body">Access our full curriculum across all secondary levels.</p>
         </div>
-        <a 
-          href="/all-categories" 
+        <Link 
+          to="/all-categories" 
           className="btn-primary whitespace-nowrap group flex items-center gap-3 px-8"
         >
           View All Categories
@@ -25,7 +26,7 @@ export const ViewAllCategories = () => {
           >
             →
           </motion.span>
-        </a>
+        </Link>
       </div>
     </motion.div>
   );
