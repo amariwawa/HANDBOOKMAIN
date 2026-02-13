@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ViewAllCategories } from "./ViewAllCategories";
 
 type Category = "junior" | "sciences" | "arts" | "commercial" | "ai";
