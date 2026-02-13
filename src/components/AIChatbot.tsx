@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageSquare, X, Send, Loader2, Sparkles } from "lucide-react";
+import { MessageCircle, X, Send, Loader2, Sparkles } from "lucide-react";
 import { generateContent } from "@/lib/gemini";
 import { Button } from "@/components/ui/button";
 
@@ -148,7 +148,7 @@ export const AIChatbot = () => {
               animate={{ opacity: 1, rotate: 0 }}
               exit={{ opacity: 0, rotate: -90 }}
             >
-              <MessageSquare className="w-6 h-6" />
+              <MessageCircle className="w-8 h-8" />
             </motion.div>
           )}
         </AnimatePresence>

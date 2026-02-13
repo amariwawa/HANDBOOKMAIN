@@ -10,6 +10,7 @@ import TeacherSuite from "./pages/TeacherSuite";
 import Admin from "./pages/Admin";
 import StudentPastQuestions from "./pages/StudentPastQuestions";
 import AllCategories from "./pages/AllCategories";
+import Donate from "./pages/Donate";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/all-categories" element={<AllCategories />} />
           <Route path="/teacher-suite" element={<TeacherSuite />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/donate" element={<Donate />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

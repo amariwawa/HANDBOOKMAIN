@@ -87,10 +87,10 @@ export const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-wrap gap-4"
           >
-            <button className="btn-primary flex items-center gap-2 group">
+            <a href="#pricing" className="btn-primary flex items-center gap-2 group">
               Start Learning Free
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </button>
+            </a>
             <button className="btn-secondary">
               Watch Demo
             </button>

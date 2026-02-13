@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const features = [
   {
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=300&fit=crop",
     title: "AI-Powered Explanations",
     description: "Get detailed, personalized explanations for every question. Our AI tutor adapts to your learning style.",
   },
@@ -22,7 +22,7 @@ const features = [
     description: "Track your improvement over time with detailed performance insights and recommendations.",
   },
   {
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop",
     title: "Learn Anytime",
     description: "Access your lessons 24/7 on any device. Continue where you left off seamlessly.",
   },
@@ -46,10 +46,10 @@ export const FeaturesSection = () => {
           className="text-center mb-16"
         >
           <span className="text-primary text-sm font-medium tracking-widest uppercase mb-4 block font-body">
-            Why HANDBOOK?
+            Why Handbook?
           </span>
           <h2 className="section-title mb-6">
-            Why <span className="italic-accent text-primary">Handbook?</span>
+            Learn <span className="italic-accent text-primary">Smarter,</span> Not Harder
           </h2>
           <p className="section-subtitle mx-auto font-body">
             Experience the future of education with features designed specifically 

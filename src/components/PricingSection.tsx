@@ -7,7 +7,7 @@ const plans = [
     price: "₦2,000",
     period: "/month",
     description: "Perfect for getting started with AI-powered learning",
-    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop",
     features: [
       "Access to all subjects",
       "500 AI explanations/month",
@@ -23,7 +23,7 @@ const plans = [
     price: "₦4,000",
     period: "/month",
     description: "Unlimited learning with personalized AI tutoring",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=400&fit=crop",
     features: [
       "Everything in Basic",
       "Unlimited AI explanations",
@@ -41,7 +41,7 @@ const plans = [
     price: "₦20,000",
     period: "/month",
     description: "Complete solution for schools and institutions",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=400&fit=crop",
     features: [
       "Everything in Premium",
       "Up to 100 student accounts",

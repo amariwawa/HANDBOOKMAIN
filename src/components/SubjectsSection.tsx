@@ -163,8 +163,8 @@ export const SubjectsSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                 
                 {/* Content */}
-                <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                  <h3 className="font-display font-semibold text-xl text-white mb-1 group-hover:text-primary transition-colors duration-300">
+                <div className="absolute inset-0 p-6 flex flex-col justify-end z-10 relative">
+                  <h3 className="font-display font-semibold text-xl text-white mb-1 group-hover:text-primary transition-colors duration-300 drop-shadow-md">
                     {subject.name}
                   </h3>
                   
