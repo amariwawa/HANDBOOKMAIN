@@ -9,6 +9,7 @@ import StudentSuite from "./pages/StudentSuite";
 import TeacherSuite from "./pages/TeacherSuite";
 import Admin from "./pages/Admin";
 import StudentPastQuestions from "./pages/StudentPastQuestions";
+import AllCategories from "./pages/AllCategories";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/student-suite" element={<StudentSuite />} />
           <Route path="/student-suite/past-questions" element={<StudentPastQuestions />} />
+          <Route path="/all-categories" element={<AllCategories />} />
           <Route path="/teacher-suite" element={<TeacherSuite />} />
           <Route path="/admin" element={<Admin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
