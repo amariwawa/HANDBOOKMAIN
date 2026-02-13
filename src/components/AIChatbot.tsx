@@ -126,10 +126,10 @@ export const AIChatbot = () => {
       </AnimatePresence>
 
       <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-lg shadow-primary/30 relative group"
+        className="w-16 h-16 bg-gradient-to-tr from-primary to-primary/80 text-white rounded-full flex items-center justify-center shadow-xl shadow-primary/40 relative group border-4 border-white/10 backdrop-blur-sm"
       >
         <AnimatePresence mode="wait">
           {isOpen ? (

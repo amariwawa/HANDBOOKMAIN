@@ -60,7 +60,7 @@ export const SubjectsSection = () => {
   const [hoveredSubject, setHoveredSubject] = useState<string | null>(null);
 
   return (
-    <section id="subjects" className="pt-24 pb-12 relative overflow-hidden">
+    <section id="subjects" className="pt-24 pb-6 relative overflow-hidden">
       {/* Background Accent */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
