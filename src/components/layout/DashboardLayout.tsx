@@ -1,19 +1,11 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { 
-  LayoutDashboard, 
-  Inbox, 
-  BookOpen, 
-  CheckSquare, 
-  Users, 
-  Settings, 
-  LogOut, 
-  Search, 
-  Bell, 
-  MessageSquare,
+import {
+  Settings,
+  LogOut,
+  Search,
+  Bell,
   Sparkles,
-  Gamepad2,
-  FileText,
   UserPlus,
   Menu,
   ChevronLeft,
@@ -38,26 +30,38 @@ interface DashboardLayoutProps {
   friends?: Array<{ name: string; status: string; avatar?: string }>;
 }
 
-export const DashboardLayout = ({ 
-  children, 
-  navItems, 
+export const DashboardLayout = ({
+  children,
+  navItems,
   userType,
-  friends = [] 
+  friends = []
 }: DashboardLayoutProps) => {
   const location = useLocation();
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   return (
-    <div className="flex h-screen bg-[#F8F9FB] dark:bg-slate-950 text-slate-900 dark:text-slate-100 overflow-hidden">
-      {/* Sidebar */}
+    <div className="relative h-screen bg-[#F8F9FB] dark:bg-slate-950 text-slate-900 dark:text-slate-100 overflow-hidden">
+      <AnimatePresence>
+        {isSidebarOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 bg-black/20 z-20 lg:hidden"
+            onClick={() => setIsSidebarOpen(false)}
+          />
+        )}
+      </AnimatePresence>
+
       <AnimatePresence mode="wait">
         {isSidebarOpen && (
-          <motion.aside 
-            initial={{ width: 0, opacity: 0 }}
-            animate={{ width: 256, opacity: 1 }}
-            exit={{ width: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col whitespace-nowrap overflow-hidden"
+          <motion.aside
+            initial={{ x: -280, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: -280, opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="fixed left-0 top-0 bottom-0 w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 z-30 flex flex-col whitespace-nowrap overflow-hidden"
           >
             <div className="p-6 flex items-center justify-between">
               <Link to="/" className="flex items-center gap-2">
@@ -74,7 +78,6 @@ export const DashboardLayout = ({
             </div>
 
             <div className="flex-1 overflow-y-auto px-4 py-2 space-y-8 custom-scrollbar">
-              {/* Overview Section */}
               <div>
                 <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4 px-2">
                   Overview
@@ -87,8 +90,8 @@ export const DashboardLayout = ({
                         key={item.name}
                         to={item.href}
                         className={`flex items-center gap-3 px-3 py-2 rounded-xl transition-all duration-200 group ${
-                          isActive 
-                            ? "bg-primary text-white shadow-lg shadow-primary/20" 
+                          isActive
+                            ? "bg-primary text-white shadow-lg shadow-primary/20"
                             : "text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary"
                         }`}
                       >
@@ -107,7 +110,6 @@ export const DashboardLayout = ({
                 </nav>
               </div>
 
-              {/* Friends Section (Specific to Students/Teachers) */}
               {userType !== "Admin" && (
                 <div>
                   <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4 px-2 flex justify-between items-center">
@@ -137,7 +139,6 @@ export const DashboardLayout = ({
                 </div>
               )}
 
-              {/* Settings Section */}
               <div>
                 <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4 px-2">
                   Settings
@@ -163,8 +164,7 @@ export const DashboardLayout = ({
         )}
       </AnimatePresence>
 
-      {/* Main Content */}
-      <main className="flex-1 flex flex-col overflow-hidden bg-[#F8F9FB] dark:bg-slate-950">
+      <main className={`flex flex-col h-screen overflow-hidden bg-[#F8F9FB] dark:bg-slate-950 ${isSidebarOpen ? "lg:pl-64" : "lg:pl-0"}`}>
         {/* Header */}
         <header className="h-20 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-8 flex items-center justify-between shrink-0 transition-all">
           <div className="flex items-center gap-4">
@@ -205,41 +205,6 @@ export const DashboardLayout = ({
 
         {/* Page Content */}
         <div className="flex-1 overflow-auto p-8">
-          {children}
-        </div>
-      </main>
-    </div>
-  );
-};
-
-          <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2">
-              <Button variant="ghost" size="icon" className="rounded-xl text-slate-500">
-                <MessageSquare className="w-5 h-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="rounded-xl text-slate-500 relative">
-                <Bell className="w-5 h-5" />
-                <span className="absolute top-2 right-2 w-2 h-2 bg-rose-500 rounded-full border-2 border-white"></span>
-              </Button>
-            </div>
-            
-            <div className="h-8 w-px bg-slate-200" />
-            
-            <div className="flex items-center gap-3">
-              <div className="text-right hidden sm:block">
-                <p className="text-sm font-bold text-slate-900">Jason Ranti</p>
-                <p className="text-[10px] font-medium text-slate-400 uppercase tracking-tighter">{userType}</p>
-              </div>
-              <Avatar className="w-10 h-10 border-2 border-white shadow-sm">
-                <AvatarImage src="https://github.com/shadcn.png" />
-                <AvatarFallback>JR</AvatarFallback>
-              </Avatar>
-            </div>
-          </div>
-        </header>
-
-        {/* Content Area */}
-        <div className="flex-1 overflow-y-auto p-8">
           {children}
         </div>
       </main>
