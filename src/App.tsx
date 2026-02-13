@@ -2,12 +2,16 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
 import StudentSuite from "./pages/StudentSuite";
 import TeacherSuite from "./pages/TeacherSuite";
 import Admin from "./pages/Admin";
+import AdminUsers from "./pages/AdminUsers";
+import AdminPayments from "./pages/AdminPayments";
+import AdminQuestions from "./pages/AdminQuestions";
+import AdminCalendars from "./pages/AdminCalendars";
+import AdminDatabase from "./pages/AdminDatabase";
 import StudentPastQuestions from "./pages/StudentPastQuestions";
 import AllCategories from "./pages/AllCategories";
 import Donate from "./pages/Donate";
@@ -50,9 +54,15 @@ const App = () => (
           <Route path="/teacher-suite/research" element={<TeacherResearch />} />
           
           <Route path="/admin" element={<Admin />} />
+          <Route path="/admin/users" element={<AdminUsers />} />
+          <Route path="/admin/payments" element={<AdminPayments />} />
+          <Route path="/admin/questions" element={<AdminQuestions />} />
+          <Route path="/admin/calendars" element={<AdminCalendars />} />
+          <Route path="/admin/database" element={<AdminDatabase />} />
+
           <Route path="/donate" element={<Donate />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
+          {/* Redirect all unknown routes to home */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
       </TooltipProvider>
