@@ -61,13 +61,19 @@ export const Footer = () => {
             © 2026 HANDBOOK. All rights reserved.
           </p>
           <div className="flex items-center gap-6 mt-4 md:mt-0">
-            {["Twitter", "Instagram", "LinkedIn", "YouTube"].map((social) => (
+            {[
+              { label: "Twitter", href: "#" },
+              { label: "Facebook", href: "#" },
+              { label: "LinkedIn", href: "#" },
+              { label: "YouTube", href: "#" },
+              { label: "Admin", href: "/admin" },
+            ].map((social) => (
               <a
-                key={social}
-                href="#"
+                key={social.label}
+                href={social.href}
                 className="text-muted-foreground hover:text-foreground transition-colors text-sm"
               >
-                {social}
+                {social.label}
               </a>
             ))}
           </div>

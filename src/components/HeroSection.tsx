@@ -12,8 +12,8 @@ export const HeroSection = () => {
           alt="Nigerian graduates celebrating"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-transparent to-background/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/25 to-background dark:from-background/80 dark:via-background/70 dark:to-background" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/50 via-transparent to-background/50 dark:from-background/90 dark:via-transparent dark:to-background/90" />
       </div>
 
       {/* Floating Particles */}
@@ -91,9 +91,9 @@ export const HeroSection = () => {
               Start Learning Free
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </a>
-            <button className="btn-secondary">
-              Watch Demo
-            </button>
+            <a href="/donate" className="btn-secondary">
+              Donate
+            </a>
           </motion.div>
 
           {/* Stats */}

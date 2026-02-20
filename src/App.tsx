@@ -15,6 +15,8 @@ import AdminDatabase from "./pages/AdminDatabase";
 import StudentPastQuestions from "./pages/StudentPastQuestions";
 import AllCategories from "./pages/AllCategories";
 import Donate from "./pages/Donate";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 import StudentSubjects from "./pages/StudentSubjects";
 import SubjectPage from "./pages/SubjectPage";
 import ClassAI from "./pages/ClassAI";
@@ -65,6 +67,8 @@ const App = () => (
           <Route path="/admin/database" element={<AdminDatabase />} />
 
           <Route path="/donate" element={<Donate />} />
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
           {/* Redirect all unknown routes to home */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

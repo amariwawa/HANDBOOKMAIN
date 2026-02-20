@@ -1,10 +1,13 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+import { toast } from "@/components/ui/use-toast";
 
 const plans = [
   {
     name: "Basic",
     price: "₦4,000",
+    amount: 4000,
     period: "/month",
     description: "Perfect for getting started with AI-powered learning",
     image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop",
@@ -21,6 +24,7 @@ const plans = [
   {
     name: "Premium",
     price: "₦12,000",
+    amount: 12000,
     period: "/month",
     description: "Unlimited learning with personalized AI tutoring",
     image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=400&fit=crop",
@@ -39,6 +43,7 @@ const plans = [
   {
     name: "Enterprise",
     price: "₦50,000",
+    amount: 50000,
     period: "/month",
     description: "Complete solution for schools and institutions",
     image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=400&fit=crop",
@@ -57,7 +62,101 @@ const plans = [
   },
 ];
 
+type PaystackHandler = {
+  openIframe: () => void;
+};
+
+type PaystackSetup = (options: {
+  key: string;
+  email: string;
+  amount: number;
+  currency: string;
+  ref: string;
+  metadata: {
+    custom_fields: Array<{
+      display_name: string;
+      variable_name: string;
+      value: string;
+    }>;
+  };
+  callback: () => void;
+  onClose: () => void;
+}) => PaystackHandler;
+
+declare global {
+  interface Window {
+    PaystackPop?: {
+      setup: PaystackSetup;
+    };
+  }
+}
+
 export const PricingSection = () => {
+  const [selectedPlan, setSelectedPlan] = useState(plans[1].name);
+  const [paystackReady, setPaystackReady] = useState(false);
+  const paystackPublicKey = import.meta.env.VITE_PAYSTACK_PUBLIC_KEY as string | undefined;
+
+  useEffect(() => {
+    if (!paystackPublicKey) {
+      setPaystackReady(false);
+      return;
+    }
+
+    if (window.PaystackPop) {
+      setPaystackReady(true);
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = "https://js.paystack.co/v1/inline.js";
+    script.async = true;
+    script.onload = () => setPaystackReady(true);
+    script.onerror = () => setPaystackReady(false);
+    document.body.appendChild(script);
+  }, [paystackPublicKey]);
+
+  const handlePaystackCheckout = (plan: typeof plans[number]) => {
+    if (!paystackPublicKey || !paystackReady || !window.PaystackPop) {
+      toast({
+        title: "Paystack not connected",
+        description: "Add your Paystack public key to enable payments.",
+      });
+      return;
+    }
+
+    const savedUser = localStorage.getItem("handbook_user");
+    const customerEmail = savedUser ? JSON.parse(savedUser).email : "customer@handbook.ng";
+    const reference = `handbook-${plan.name}-${Date.now()}`;
+
+    const handler = window.PaystackPop.setup({
+      key: paystackPublicKey,
+      email: customerEmail,
+      amount: plan.amount * 100,
+      currency: "NGN",
+      ref: reference,
+      metadata: {
+        custom_fields: [
+          { display_name: "Plan", variable_name: "plan", value: plan.name },
+          { display_name: "Billing", variable_name: "billing", value: "monthly" },
+        ],
+      },
+      callback: () => {
+        toast({
+          title: "Payment started",
+          description: "Complete the Paystack checkout to activate your plan.",
+        });
+      },
+      onClose: () => {
+        toast({
+          title: "Checkout closed",
+          description: "You can reopen Paystack anytime.",
+        });
+      },
+    });
+
+    handler.openIframe();
+  };
+
   return (
     <section id="pricing" className="py-32 relative overflow-hidden">
       {/* Background Elements */}
@@ -94,11 +193,12 @@ export const PricingSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`relative rounded-3xl overflow-hidden ${
+              onClick={() => setSelectedPlan(plan.name)}
+              className={`relative rounded-3xl overflow-hidden transition-all duration-300 ${
                 plan.popular
                   ? "border-2 border-primary/30"
                   : "border border-border"
-              }`}
+              } ${selectedPlan === plan.name ? "shadow-lg shadow-primary/20 ring-1 ring-primary/30" : "hover:shadow-md hover:shadow-primary/10"}`}
             >
               {/* Popular Badge */}
               {plan.popular && (
@@ -148,11 +248,17 @@ export const PricingSection = () => {
                 </ul>
 
                 {/* CTA Button */}
-                <button className={`w-full py-4 rounded-xl font-medium transition-all duration-300 font-body ${
-                  plan.popular
-                    ? "btn-primary"
-                    : "glass hover:bg-white/10"
-                }`}>
+                <button
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    handlePaystackCheckout(plan);
+                  }}
+                  className={`w-full py-4 rounded-xl font-medium transition-all duration-300 font-body ${
+                    plan.popular
+                      ? "btn-primary"
+                      : "glass hover:bg-white/10"
+                  }`}
+                >
                   {plan.cta}
                 </button>
               </div>
