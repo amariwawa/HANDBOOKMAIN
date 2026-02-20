@@ -32,8 +32,23 @@ export const AIChatbot = () => {
     setIsLoading(true);
 
     try {
-      const prompt = `You are a helpful AI Tutor for Handbook Nigeria, an educational platform for secondary school students. 
-      Answer the following question clearly and concisely, suitable for a student: ${userMessage}`;
+      const prompt = `You are the Handbook AI Tutor, a friendly and knowledgeable educational assistant for Nigerian secondary school students preparing for WAEC and JAMB examinations.
+
+Your role:
+- Help students understand difficult concepts in simple terms
+- Answer questions about any subject (Mathematics, English, Physics, Chemistry, Biology, etc.)
+- Provide step-by-step explanations for problem-solving
+- Give study tips and exam preparation strategies
+- Use Nigerian context and examples when relevant
+- Be encouraging and supportive
+
+Previous conversation:
+${messages.slice(-6).map(m => `${m.role === 'user' ? 'Student' : 'AI Tutor'}: ${m.content}`).join('\n')}
+
+Student's message: ${userMessage}
+
+Respond in a clear, helpful, and friendly manner. Keep responses concise but informative.`;
+
       const response = await generateContent(prompt);
       setMessages((prev) => [...prev, { role: "ai", content: response || "I couldn't generate a response." }]);
     } catch (error) {
@@ -109,7 +124,7 @@ export const AIChatbot = () => {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyPress={(e) => e.key === "Enter" && handleSend()}
                   placeholder="Ask me anything..."
-                  className="flex-1 bg-slate-50 border-none rounded-xl px-4 py-2 text-sm focus:ring-2 focus:ring-primary/20 outline-none"
+                  className="flex-1 bg-slate-100 border border-slate-200 rounded-xl px-4 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-primary/20 focus:border-primary/30 outline-none"
                 />
                 <Button 
                   onClick={handleSend}

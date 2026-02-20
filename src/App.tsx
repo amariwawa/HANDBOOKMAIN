@@ -16,6 +16,7 @@ import StudentPastQuestions from "./pages/StudentPastQuestions";
 import AllCategories from "./pages/AllCategories";
 import Donate from "./pages/Donate";
 import StudentSubjects from "./pages/StudentSubjects";
+import SubjectPage from "./pages/SubjectPage";
 import ClassAI from "./pages/ClassAI";
 import StudentGames from "./pages/StudentGames";
 import StudentInbox from "./pages/StudentInbox";
@@ -24,6 +25,7 @@ import TeacherChat from "./pages/TeacherChat";
 import TeacherNotes from "./pages/TeacherNotes";
 import TeacherExams from "./pages/TeacherExams";
 import TeacherResearch from "./pages/TeacherResearch";
+import StudentFriends from "./pages/StudentFriends";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const queryClient = new QueryClient();
@@ -40,9 +42,11 @@ const App = () => (
           <Route path="/student-suite" element={<StudentSuite />} />
           <Route path="/student-suite/past-questions" element={<StudentPastQuestions />} />
           <Route path="/student-suite/subjects" element={<StudentSubjects />} />
+          <Route path="/student-suite/subject/:subjectId" element={<SubjectPage />} />
           <Route path="/student-suite/class" element={<ClassAI />} />
           <Route path="/student-suite/games" element={<StudentGames />} />
           <Route path="/student-suite/inbox" element={<StudentInbox />} />
+          <Route path="/student-suite/friends" element={<StudentFriends />} />
           
           <Route path="/all-categories" element={<AllCategories />} />
           

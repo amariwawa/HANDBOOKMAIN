@@ -7,7 +7,8 @@ import {
   Gamepad2, 
   FileText,
   MessageSquare,
-  Sparkles
+  Sparkles,
+  Users
 } from "lucide-react";
 
 const studentNavItems = [
@@ -16,6 +17,7 @@ const studentNavItems = [
   { name: "Class AI", icon: Sparkles, href: "/student-suite/class" },
   { name: "Past Questions", icon: FileText, href: "/student-suite/past-questions" },
   { name: "Games", icon: Gamepad2, href: "/student-suite/games" },
+  { name: "Friends", icon: Users, href: "/student-suite/friends" },
   { name: "Inbox", icon: MessageSquare, href: "/student-suite/inbox" },
 ];
 

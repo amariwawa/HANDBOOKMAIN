@@ -103,6 +103,10 @@ export const Navbar = () => {
                 </a>
               ))}
               <hr className="border-border" />
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-muted-foreground">Theme</span>
+                <ThemeToggle />
+              </div>
               <button className="btn-primary w-full text-center">
                 Get Started
               </button>
