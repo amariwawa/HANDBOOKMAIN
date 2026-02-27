@@ -102,11 +102,11 @@ const StudentGames = () => {
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900">Educational Games</h2>
-            <p className="text-slate-500 mt-1">Learn while having fun with interactive games</p>
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Educational Games</h2>
+            <p className="text-slate-500 mt-1 dark:text-slate-300">Learn while having fun with interactive games</p>
           </div>
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2 px-4 py-2 bg-amber-50 rounded-xl">
+            <div className="flex items-center gap-2 px-4 py-2 bg-amber-50 dark:bg-white rounded-xl">
               <Trophy className="w-5 h-5 text-amber-500" />
               <span className="text-sm font-medium text-amber-700">Your Best: 9,500 pts</span>
             </div>
@@ -148,7 +148,7 @@ const StudentGames = () => {
             { label: "Time Played", value: "24h 30m", icon: Clock, color: "text-purple-500", bg: "bg-purple-50" },
             { label: "Global Rank", value: "#127", icon: Trophy, color: "text-emerald-500", bg: "bg-emerald-50" },
           ].map((stat, i) => (
-            <Card key={i} className="rounded-2xl border-none shadow-sm">
+            <Card key={i} className="rounded-2xl border-none shadow-sm dark:bg-white">
               <CardContent className="p-4 flex items-center gap-4">
                 <div className={`w-12 h-12 ${stat.bg} rounded-xl flex items-center justify-center`}>
                   <stat.icon className={`w-6 h-6 ${stat.color}`} />
@@ -164,10 +164,10 @@ const StudentGames = () => {
 
         {/* Games Grid */}
         <div>
-          <h3 className="text-xl font-bold mb-4">All Games</h3>
+          <h3 className="text-xl font-bold mb-4 text-slate-900 dark:text-white">All Games</h3>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {games.map((game, i) => (
-              <Card key={game.name} className="rounded-2xl border-none shadow-sm overflow-hidden cursor-pointer group hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <Card key={game.name} className="rounded-2xl border-none shadow-sm overflow-hidden cursor-pointer group hover:shadow-xl hover:-translate-y-1 transition-all duration-300 dark:bg-white">
                 {/* Image */}
                 <div className="relative h-40 overflow-hidden">
                   <img 
@@ -194,7 +194,7 @@ const StudentGames = () => {
                   <h3 className="font-bold text-lg text-slate-900 mb-1">{game.name}</h3>
                   <p className="text-sm text-slate-500 mb-4">{game.description}</p>
                   
-                  <div className="flex items-center justify-between pt-3 border-t">
+                  <div className="flex items-center justify-between pt-3 border-t border-slate-200 dark:border-slate-200">
                     <div className="flex items-center gap-4 text-sm text-slate-500">
                       <span className="flex items-center gap-1">
                         <Users className="w-4 h-4" />

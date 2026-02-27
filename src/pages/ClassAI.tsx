@@ -166,8 +166,8 @@ ${messages.slice(-8).map(m => `${m.role === 'user' ? 'Student' : 'AI Tutor'}: ${
               <Sparkles className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-slate-900">Class AI Tutor</h2>
-              <p className="text-sm text-slate-500">Your personal AI learning assistant</p>
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Class AI Tutor</h2>
+              <p className="text-sm text-slate-500 dark:text-slate-300">Your personal AI learning assistant</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
