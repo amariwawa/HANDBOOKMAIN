@@ -77,7 +77,7 @@ const TeacherExams = () => {
     setIsGenerating(true);
     
     try {
-      const questions = await generateQuestions(subject, topic, questionCount);
+      const questions = await generateQuestions(subject, topic, questionCount, "teacher-exams");
       if (questions && questions.length > 0) {
         setGeneratedQuestions(questions);
         toast.success(`Generated ${questions.length} questions`);

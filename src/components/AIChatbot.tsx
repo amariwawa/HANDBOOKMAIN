@@ -52,7 +52,8 @@ Respond in a clear, helpful, and friendly manner. Keep responses concise but inf
       const response = await generateContent(prompt);
       setMessages((prev) => [...prev, { role: "ai", content: response || "I couldn't generate a response." }]);
     } catch (error) {
-      setMessages((prev) => [...prev, { role: "ai", content: "Sorry, I encountered an error. Please try again." }]);
+      const message = error instanceof Error ? error.message : "AI is unavailable right now.";
+      setMessages((prev) => [...prev, { role: "ai", content: `Sorry, ${message}` }]);
     } finally {
       setIsLoading(false);
     }

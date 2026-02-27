@@ -167,7 +167,7 @@ const SubjectPage = () => {
     setIsLoading(true);
     setChatMessages([]);
     try {
-      const newQuestions = await generateQuestions(subject.name, topic, 10);
+      const newQuestions = await generateQuestions(subject.name, topic, 10, `subject-${subjectId || subject.name.toLowerCase()}`);
       if (newQuestions && newQuestions.length > 0) {
         setQuestions(newQuestions);
         setCurrentIdx(0);
