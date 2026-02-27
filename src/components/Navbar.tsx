@@ -33,11 +33,11 @@ export const Navbar = () => {
         isScrolled ? "glass-strong py-4" : "py-6"
       }`}
     >
-      <div className="container mx-auto px-6 flex items-center justify-between">
+      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         {/* Logo - Animated HANDBOOK text */}
         <a href="#home" className="group">
           <motion.span 
-            className="font-display text-3xl font-bold tracking-tight text-foreground"
+            className="font-display text-2xl md:text-3xl font-bold tracking-tight text-foreground"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
@@ -75,12 +75,15 @@ export const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden w-10 h-10 flex items-center justify-center"
-        >
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="w-10 h-10 flex items-center justify-center"
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -103,11 +106,6 @@ export const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <hr className="border-border" />
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground">Theme</span>
-                <ThemeToggle />
-              </div>
               <a href="/#pricing" className="btn-primary w-full text-center">
                 Get Started
               </a>
