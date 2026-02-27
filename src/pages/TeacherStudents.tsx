@@ -94,8 +94,8 @@ const TeacherStudents = () => {
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-2xl font-bold text-slate-900">My Students</h2>
-            <p className="text-slate-500">Manage and monitor your students' progress</p>
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white">My Students</h2>
+            <p className="text-slate-500 dark:text-slate-300">Manage and monitor your students' progress</p>
           </div>
           <div className="flex items-center gap-3">
             <Button variant="outline" className="rounded-xl">
@@ -115,7 +115,7 @@ const TeacherStudents = () => {
             { label: "Avg. Attendance", value: "89%", icon: BookOpen, color: "text-purple-500", bg: "bg-purple-50" },
             { label: "Top Performers", value: "12", icon: Trophy, color: "text-amber-500", bg: "bg-amber-50" },
           ].map((stat, i) => (
-            <Card key={i} className="rounded-2xl border-none shadow-sm">
+            <Card key={i} className="rounded-2xl border-none shadow-sm dark:bg-white">
               <CardContent className="p-4 flex items-center gap-4">
                 <div className={`w-12 h-12 ${stat.bg} rounded-xl flex items-center justify-center`}>
                   <stat.icon className={`w-6 h-6 ${stat.color}`} />
@@ -131,7 +131,7 @@ const TeacherStudents = () => {
 
         {/* Pending Requests */}
         {pendingRequests.length > 0 && (
-          <Card className="rounded-2xl border-none shadow-sm border-l-4 border-l-amber-500">
+          <Card className="rounded-2xl border-none shadow-sm border-l-4 border-l-amber-500 dark:bg-white dark:text-slate-900">
             <CardContent className="p-4">
               <h3 className="font-semibold mb-3 flex items-center gap-2">
                 <UserPlus className="w-4 h-4 text-amber-500" />
@@ -139,7 +139,7 @@ const TeacherStudents = () => {
               </h3>
               <div className="flex flex-wrap gap-3">
                 {pendingRequests.map((req) => (
-                  <div key={req.id} className="flex items-center gap-3 p-3 bg-slate-50 rounded-xl">
+                  <div key={req.id} className="flex items-center gap-3 p-3 bg-slate-50 rounded-xl dark:bg-slate-100">
                     <Avatar className="w-10 h-10">
                       <AvatarImage src={req.avatar} />
                       <AvatarFallback>{req.name[0]}</AvatarFallback>
@@ -184,7 +184,7 @@ const TeacherStudents = () => {
           {filteredStudents.map((student) => (
             <Card 
               key={student.id} 
-              className="rounded-2xl border-none shadow-sm hover:shadow-lg transition-all cursor-pointer"
+              className="rounded-2xl border-none shadow-sm hover:shadow-lg transition-all cursor-pointer dark:bg-white"
               onClick={() => setShowStudentModal(student)}
             >
               <CardContent className="p-5">
@@ -198,7 +198,7 @@ const TeacherStudents = () => {
                       <span className={`absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-white ${student.lastActive === "Online" ? "bg-emerald-500" : "bg-slate-300"}`}></span>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-slate-900">{student.name}</h3>
+                      <h3 className="font-semibold text-slate-900 dark:text-white">{student.name}</h3>
                       <p className="text-xs text-slate-500">{student.class}</p>
                     </div>
                   </div>
@@ -208,17 +208,17 @@ const TeacherStudents = () => {
                 </div>
 
                 <div className="grid grid-cols-3 gap-3 mb-4">
-                  <div className="text-center p-2 bg-slate-50 rounded-xl">
-                    <p className="text-lg font-bold text-slate-900">{student.attendance}%</p>
-                    <p className="text-[10px] text-slate-500">Attendance</p>
+                  <div className="text-center p-2 bg-slate-50 rounded-xl dark:bg-white">
+                    <p className="text-lg font-bold text-slate-900 dark:text-slate-900">{student.attendance}%</p>
+                    <p className="text-[10px] text-slate-500 dark:text-slate-700">Attendance</p>
                   </div>
-                  <div className="text-center p-2 bg-slate-50 rounded-xl">
-                    <p className="text-lg font-bold text-slate-900">{student.grade}</p>
-                    <p className="text-[10px] text-slate-500">Grade</p>
+                  <div className="text-center p-2 bg-slate-50 rounded-xl dark:bg-white">
+                    <p className="text-lg font-bold text-slate-900 dark:text-slate-900">{student.grade}</p>
+                    <p className="text-[10px] text-slate-500 dark:text-slate-700">Grade</p>
                   </div>
-                  <div className="text-center p-2 bg-slate-50 rounded-xl">
-                    <p className="text-lg font-bold text-slate-900">{student.avgScore}</p>
-                    <p className="text-[10px] text-slate-500">Avg Score</p>
+                  <div className="text-center p-2 bg-slate-50 rounded-xl dark:bg-white">
+                    <p className="text-lg font-bold text-slate-900 dark:text-slate-900">{student.avgScore}</p>
+                    <p className="text-[10px] text-slate-500 dark:text-slate-700">Avg Score</p>
                   </div>
                 </div>
 

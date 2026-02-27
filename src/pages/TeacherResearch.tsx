@@ -110,7 +110,7 @@ const TeacherResearch = () => {
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-indigo-50 text-primary rounded-xl">
+            <div className="p-2 bg-indigo-50 text-primary rounded-xl dark:text-white">
               <BrainCircuit className="w-5 h-5" />
             </div>
             <h2 className="text-2xl font-bold tracking-tight">AI Research Assistant</h2>
@@ -162,7 +162,7 @@ const TeacherResearch = () => {
               <Card className="rounded-2xl border-none shadow-sm">
                 <CardHeader className="pb-2">
                   <CardTitle className="flex items-center gap-2 text-lg">
-                    <BookOpen className="w-5 h-5 text-primary" />
+                    <BookOpen className="w-5 h-5 text-primary dark:text-white" />
                     Summary
                   </CardTitle>
                 </CardHeader>
@@ -249,7 +249,7 @@ const TeacherResearch = () => {
               <Card className="rounded-2xl border-none shadow-sm bg-slate-900 text-white overflow-hidden">
                 <CardHeader className="pb-2 bg-slate-800/50">
                   <CardTitle className="flex items-center gap-2 text-sm">
-                    <Sparkles className="w-4 h-4 text-primary" />
+                    <Sparkles className="w-4 h-4 text-primary dark:text-white" />
                     Ask AI about this topic
                   </CardTitle>
                 </CardHeader>

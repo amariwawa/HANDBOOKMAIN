@@ -151,7 +151,7 @@ const TeacherExams = () => {
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-indigo-50 text-primary rounded-xl">
+            <div className="p-2 bg-indigo-50 text-primary rounded-xl dark:text-white">
               <CheckSquare className="w-5 h-5" />
             </div>
             <h2 className="text-2xl font-bold tracking-tight">Exam Creator</h2>
@@ -348,7 +348,7 @@ const TeacherExams = () => {
             <div key={exam.id} className="bg-card p-6 rounded-2xl border hover:shadow-md transition-shadow">
               <div className="flex items-start justify-between mb-2">
                 <div className="p-2 bg-indigo-50 rounded-xl">
-                  <FileText className="w-5 h-5 text-primary" />
+                  <FileText className="w-5 h-5 text-primary dark:text-white" />
                 </div>
                 <span className="text-xs font-medium px-2 py-1 bg-slate-100 rounded-full text-slate-600">
                   {exam.subject}

@@ -99,13 +99,13 @@ const TeacherDashboard = () => {
 
       <div className="grid gap-6 md:grid-cols-3">
         {/* Class Performance Chart */}
-        <Card className="md:col-span-2 rounded-3xl border-none shadow-sm p-6">
+        <Card className="md:col-span-2 rounded-3xl border-none shadow-sm p-6 dark:bg-white">
           <div className="flex items-center justify-between mb-8">
             <div>
               <h3 className="text-lg font-bold text-slate-900">Class Performance</h3>
-              <p className="text-sm text-slate-400">Average test scores this week</p>
+              <p className="text-sm text-slate-400 dark:text-slate-500">Average test scores this week</p>
             </div>
-            <select className="bg-slate-50 border-none rounded-lg text-xs font-bold px-3 py-2 text-slate-500 focus:ring-0">
+            <select className="bg-slate-50 border-none rounded-lg text-xs font-bold px-3 py-2 text-slate-500 focus:ring-0 dark:bg-slate-100 dark:text-slate-600">
               <option>Mathematics SS3</option>
               <option>Physics SS3</option>
             </select>
@@ -126,19 +126,19 @@ const TeacherDashboard = () => {
         </Card>
 
         {/* AI Tools Card */}
-        <Card className="rounded-3xl border-none shadow-sm p-6 bg-slate-900 text-white">
+        <Card className="rounded-3xl border-none shadow-sm p-6 bg-slate-900 text-white dark:bg-white dark:text-slate-900">
           <div className="mb-6">
             <div className="w-12 h-12 bg-emerald-500 rounded-2xl flex items-center justify-center mb-4">
               <BrainCircuit className="w-6 h-6 text-white" />
             </div>
             <h3 className="text-lg font-bold">AI Assistant</h3>
-            <p className="text-slate-400 text-sm">Empower your teaching with AI</p>
+            <p className="text-slate-400 text-sm dark:text-slate-600">Empower your teaching with AI</p>
           </div>
           <div className="space-y-3">
             <Button 
               onClick={() => handleAiTool("lesson-note")}
               disabled={isLoading}
-              className="w-full justify-start bg-slate-800 hover:bg-slate-700 text-white border-none rounded-xl h-12 px-4 group"
+              className="w-full justify-start bg-slate-800 hover:bg-slate-700 text-white border-none rounded-xl h-12 px-4 group dark:bg-slate-100 dark:hover:bg-slate-200 dark:text-slate-900"
             >
               <FileText className="w-4 h-4 mr-3 text-emerald-500" />
               <span className="text-sm font-medium">
@@ -153,7 +153,7 @@ const TeacherDashboard = () => {
             <Button 
               onClick={() => handleAiTool("research")}
               disabled={isLoading}
-              className="w-full justify-start bg-slate-800 hover:bg-slate-700 text-white border-none rounded-xl h-12 px-4 group"
+              className="w-full justify-start bg-slate-800 hover:bg-slate-700 text-white border-none rounded-xl h-12 px-4 group dark:bg-slate-100 dark:hover:bg-slate-200 dark:text-slate-900"
             >
               <Sparkles className="w-4 h-4 mr-3 text-purple-500" />
               <span className="text-sm font-medium">
@@ -168,7 +168,7 @@ const TeacherDashboard = () => {
             <Button 
               onClick={() => handleAiTool("quiz")}
               disabled={isLoading}
-              className="w-full justify-start bg-slate-800 hover:bg-slate-700 text-white border-none rounded-xl h-12 px-4 group"
+              className="w-full justify-start bg-slate-800 hover:bg-slate-700 text-white border-none rounded-xl h-12 px-4 group dark:bg-slate-100 dark:hover:bg-slate-200 dark:text-slate-900"
             >
               <CheckSquare className="w-4 h-4 mr-3 text-amber-500" />
               <span className="text-sm font-medium">
@@ -186,13 +186,13 @@ const TeacherDashboard = () => {
             <motion.div 
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mt-6 p-4 bg-slate-800 rounded-2xl border border-slate-700"
+              className="mt-6 p-4 bg-slate-800 rounded-2xl border border-slate-700 dark:bg-slate-50 dark:border-slate-200"
             >
               <div className="flex justify-between items-center mb-2">
                 <span className="text-[10px] font-bold text-emerald-500 uppercase tracking-widest">AI Generated Response</span>
-                <Button variant="ghost" size="sm" className="h-6 text-[10px] text-slate-400" onClick={() => setAiResult(null)}>Clear</Button>
+                <Button variant="ghost" size="sm" className="h-6 text-[10px] text-slate-400 dark:text-slate-500" onClick={() => setAiResult(null)}>Clear</Button>
               </div>
-              <div className="text-xs text-slate-300 leading-relaxed whitespace-pre-wrap max-h-60 overflow-y-auto pr-2 custom-scrollbar">
+              <div className="text-xs text-slate-300 leading-relaxed whitespace-pre-wrap max-h-60 overflow-y-auto pr-2 custom-scrollbar dark:text-slate-700">
                 {aiResult}
               </div>
             </motion.div>
@@ -202,7 +202,7 @@ const TeacherDashboard = () => {
 
       <div className="grid gap-6 md:grid-cols-3">
         {/* Student Tracking Table */}
-        <Card className="md:col-span-2 rounded-3xl border-none shadow-sm overflow-hidden">
+        <Card className="md:col-span-2 rounded-3xl border-none shadow-sm overflow-hidden dark:bg-white">
           <div className="p-6 border-b border-slate-50 flex items-center justify-between">
             <h3 className="text-lg font-bold text-slate-900">Student Tracking</h3>
             <Button variant="ghost" className="text-primary font-bold text-sm">View All</Button>
@@ -258,7 +258,7 @@ const TeacherDashboard = () => {
         </Card>
 
         {/* Group Chat Preview */}
-        <Card className="rounded-3xl border-none shadow-sm p-6">
+        <Card className="rounded-3xl border-none shadow-sm p-6 dark:bg-white">
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-lg font-bold text-slate-900">Teacher's Lounge</h3>
             <span className="px-2 py-0.5 bg-rose-500 text-white text-[10px] font-bold rounded-full">3 New</span>

@@ -97,7 +97,7 @@ Make the content suitable for WAEC/JAMB preparation and use examples that Nigeri
     <DashboardLayout navItems={teacherNavItems} userType="Teacher" friends={mockTeacherFriends}>
       <div className="space-y-6">
         <div className="flex items-center gap-3">
-          <div className="p-2 bg-indigo-50 text-primary rounded-xl">
+          <div className="p-2 bg-indigo-50 text-primary rounded-xl dark:text-white">
             <Sparkles className="w-5 h-5" />
           </div>
           <h2 className="text-2xl font-bold tracking-tight">AI Note Generator</h2>
@@ -108,7 +108,7 @@ Make the content suitable for WAEC/JAMB preparation and use examples that Nigeri
           <div className="space-y-4">
             <div className="bg-card p-6 rounded-2xl border shadow-sm">
               <h3 className="font-semibold mb-4 flex items-center gap-2">
-                <BookOpen className="w-4 h-4 text-primary" />
+                <BookOpen className="w-4 h-4 text-primary dark:text-white" />
                 Configure Notes
               </h3>
               

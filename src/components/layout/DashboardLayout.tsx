@@ -69,7 +69,7 @@ export const DashboardLayout = ({
                   <Sparkles className="w-5 h-5 text-white" />
                 </div>
                 <span className="font-display text-xl font-bold tracking-tight">
-                  HAND<span className="italic text-primary">BOOK</span>
+                  HAND<span className="italic text-primary dark:text-white">BOOK</span>
                 </span>
               </Link>
               <Button variant="ghost" size="icon" onClick={() => setIsSidebarOpen(false)}>
