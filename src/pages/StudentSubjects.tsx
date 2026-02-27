@@ -132,11 +132,11 @@ const StudentSubjects = () => {
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900">My Subjects</h2>
-            <p className="text-slate-500 mt-1">Choose a subject to start learning</p>
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">My Subjects</h2>
+            <p className="text-slate-500 mt-1 dark:text-slate-300">Choose a subject to start learning</p>
           </div>
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2 px-4 py-2 bg-indigo-50 rounded-xl">
+            <div className="flex items-center gap-2 px-4 py-2 bg-indigo-50 dark:bg-white rounded-xl">
               <Target className="w-5 h-5 text-indigo-500" />
               <span className="text-sm font-medium text-indigo-700">8 Subjects</span>
             </div>
@@ -151,7 +151,7 @@ const StudentSubjects = () => {
             { label: "In Progress", value: "194", icon: Target, color: "text-amber-500", bg: "bg-amber-50" },
             { label: "Study Time", value: "67h 15m", icon: Clock, color: "text-purple-500", bg: "bg-purple-50" },
           ].map((stat, i) => (
-            <Card key={i} className="rounded-2xl border-none shadow-sm">
+            <Card key={i} className="rounded-2xl border-none shadow-sm dark:bg-white">
               <CardContent className="p-4 flex items-center gap-4">
                 <div className={`w-12 h-12 ${stat.bg} rounded-xl flex items-center justify-center`}>
                   <stat.icon className={`w-6 h-6 ${stat.color}`} />
@@ -170,7 +170,7 @@ const StudentSubjects = () => {
           {subjects.map((subject) => (
             <Card 
               key={subject.id} 
-              className="rounded-2xl border-none shadow-sm overflow-hidden cursor-pointer group hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              className="rounded-2xl border-none shadow-sm overflow-hidden cursor-pointer group hover:shadow-xl hover:-translate-y-1 transition-all duration-300 dark:bg-white"
               onClick={() => navigate(`/student-suite/subject/${subject.id}`)}
             >
               {/* Image Header */}
